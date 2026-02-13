@@ -4,10 +4,12 @@ A simple Todo API built with **Clean Architecture** and **CQRS pattern** using .
 
 ## Technologies
 
-- .NET 10
-- Entity Framework Core
-- MediatR (CQRS)
-- FluentValidation
+- .NET 10 - Core Framework
+- Entity Framework Core - ORM
+- MediatR - CQRS Pattern implementation
+- FluentValidation - Input validation
+- Serilog - Structured logging
+- Swagger - API Documentation
 
 ## Architecture
 
@@ -16,7 +18,7 @@ The project is organized into 4 layers:
 - **Domain** - Business entities (Todo)
 - **Application** - Commands, Queries, and Handlers
 - **Infrastructure** - Database and EF Core
-- **API** - Controllers and HTTP endpoints
+- **API** - Controllers, Swagger configuration, and Serilog setup
 
 ## Getting Started
 
@@ -45,7 +47,8 @@ The project is organized into 4 layers:
    dotnet run
    ```
 
-API runs at `https://localhost:5001`
+- API runs at `https://localhost:7230`
+- Swagger UI: `https://localhost:7230/swagger` (Interactive documentation)
 
 ## API Endpoints
 
@@ -59,7 +62,9 @@ API runs at `https://localhost:5001`
 
 ## Features
 
-- CQRS pattern (Commands & Queries separated)
-- Clean Architecture
-- Input validation with FluentValidation
-- Global exception handling
+- CQRS Pattern - Complete separation of Commands and Queries.
+- Clean Architecture - Decoupled layers for better maintainability.
+- Structured Logging - Powered by Serilog.
+- Automatic API Docs - Swagger UI for testing endpoints.
+- Input Validation - FluentValidation integration with MediatR.
+- Global Exception Handling - Automatic error logging and clean API responses.
