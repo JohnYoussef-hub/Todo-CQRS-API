@@ -6,7 +6,6 @@ A simple Todo API built with **Clean Architecture** and **CQRS pattern** using .
 
 - .NET 10
 - Entity Framework Core
-- SQL Server
 - MediatR (CQRS)
 - FluentValidation
 
