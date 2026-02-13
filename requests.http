@@ -1,0 +1,67 @@
+@baseUrl = https://localhost:7230
+@todoId = 901eabe1-bb48-4e7c-b1ed-328044115471
+
+### Get All Todos
+GET {{baseUrl}}/api/Todos
+Accept: application/json
+
+### Create Todo
+# @name createTodo
+POST {{baseUrl}}/api/Todos
+Content-Type: application/json
+
+{
+  "title": "Practice English"
+}
+
+### Create Todo with Empty Title (Validation Error)
+POST {{baseUrl}}/api/Todos
+Content-Type: application/json
+
+{
+  "title": ""
+}
+
+### Get Todo By ID
+@createdTodoId = 901eabe1-bb48-4e7c-b1ed-328044115471
+GET {{baseUrl}}/api/Todos/{{createdTodoId}}
+Accept: application/json
+
+### Get Non-Existent Todo (404 Error)
+GET {{baseUrl}}/api/Todos/00000000-0000-0000-0000-000000000000
+Accept: application/json
+
+### Update Todo
+PUT {{baseUrl}}/api/Todos/{{createdTodoId}}
+Content-Type: application/json
+
+{
+  "title": "Learn CQRS and MediatR",
+  "completed": true
+}
+
+### Update Todo with Empty Title (Validation Error)
+PUT {{baseUrl}}/api/Todos/{{createdTodoId}}
+Content-Type: application/json
+
+{
+  "title": "",
+  "completed": true
+}
+
+### Update Non-Existent Todo (404 Error)
+PUT {{baseUrl}}/api/Todos/{{todoId}}
+Content-Type: application/json
+
+{
+  "title": "This will fail",
+  "completed": false
+}
+
+### Delete Todo
+DELETE {{baseUrl}}/api/Todos/{{createdTodoId}}
+
+### Delete Non-Existent Todo (404 Error)
+DELETE {{baseUrl}}/api/Todos/{{todoId}}
+
+###
